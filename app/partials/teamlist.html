@@ -1,0 +1,13 @@
+<h2>teamlist</h2>
+<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+<table>
+<thead>
+  <tr><th colspan="2">Teams</th></tr>
+</thead>
+<tbody>
+  <tr ng-repeat="team in teamList | filter: nameFilter">
+    <td>{{$index + 1}}</td>
+    <td><a href="#/teams/{{team.city.toLowerCase()}}">{{team.city}} {{team.name}}</a></td>
+  </tr>
+</tbody>
+</table>
