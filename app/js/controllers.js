@@ -6,6 +6,7 @@ angular.module('draftroom.controllers', [])
   .controller('teamListController', function($scope, teamAPIService) {
     $scope.nameFilter = null;
     $scope.teamList = [];
+
     teamAPIService.getTeams().success(function (response) {
       $scope.teamList = response;
     });

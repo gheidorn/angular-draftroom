@@ -7,25 +7,25 @@ describe('my app', function() {
   browser.get('index.html');
 
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/");
   });
 
 
   describe('view1', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('/app/#/teamlist');
     });
 
 
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render teamlist when user navigates to /teamlist', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        toMatch(/teamlist/);
     });
 
   });
 
-
+  /*
   describe('view2', function() {
 
     beforeEach(function() {
@@ -39,4 +39,5 @@ describe('my app', function() {
     });
 
   });
+  */
 });

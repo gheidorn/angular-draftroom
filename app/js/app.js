@@ -27,13 +27,5 @@ config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvide
       when("/teamlist", { templateUrl :  "partials/teamlist.html", controller : "teamListController" }).
       when("/playerlist", { templateUrl :  "partials/playerlist.html", controller : "playerListController" }).
       when("/teams/:city", { templateUrl :  "partials/team_nfl.html", controller : "teamController" }).
-      otherwise({ templateUrl : "partials/home.html", controller : function($scope) {console.log($scope);}});
+      otherwise({ templateUrl : "partials/home.html", controller : function($scope) { /*console.log($scope);*/ }});
 }]);
-/*.
-config(['$routeProvider', function($routeProvider) {
-    $routeProvider.
-      when("/teamlist", { templateUrl :  "partials/teamlist.html", controller : "teamListController"}).
-      when("/playerlist", { templateUrl :  "partials/playerlist.html", controller : "playerListController"})
-    }
-]);
-*/
