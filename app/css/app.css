@@ -72,3 +72,42 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+
+.playerCard {
+  height: 80px;
+  width: 240px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.highlight { 
+  background-color: #eaeaea;
+  -webkit-transform: scale(1.5);
+}
+
+
+#playerCards {
+    
+    text-align: left;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    
+    /* just for demo */
+    min-width: 612px;
+}
+
+.playerCard, .box2, .box3, .box4 {
+    width: 190px;
+    height: 80px;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1
+}
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}

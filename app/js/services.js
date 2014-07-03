@@ -24,6 +24,13 @@ angular.module('draftroom.services', []).
       });
     }
 
+    teamAPI.getTeamsByCompetitionName = function(competitionName) {
+      return $http({
+        method: 'GET',
+        url: 'https://sportslock.com/api/v2/' + competitionName + "/teams"
+      });
+    }
+
     return teamAPI;
   }).
   factory('playerAPIService', function($http) {
@@ -38,4 +45,15 @@ angular.module('draftroom.services', []).
     }
 
     return playerAPI;
+  }).
+  factory('competitionAPIService', function($http) {
+    var competitionAPI = {};
+    competitionAPI.getCompetitions = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://sportslock.com/api/v2/sport'
+      })
+    }
+
+    return competitionAPI;
   });
