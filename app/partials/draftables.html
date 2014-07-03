@@ -1,0 +1,39 @@
+<h2>Lock Draftables</h2>
+
+<!--
+<select id="competitionName" ng-model="competitionName" ng-change="populateTeams()">
+  <option ng-repeat="competition in competitions">{{competition.name}}</option>
+</select>
+-->
+
+<span class="nullable">
+<select id="competition" ng-model="competition" ng-change="populateTeams()" ng-options="competition.name for competition in competitions">
+  <option value="" ng-hide="">-- choose a sport --</option>
+</select>
+</span>
+
+<select id="team" ng-model="team" ng-change="populatePlayers()" ng-show="competition" ng-options="team.city for team in teams">
+  <option value="" ng-hide="">-- choose a team --</option>
+</select>
+
+<select id="player" ng-model="player" ng-show="team" ng-options="player.lastName for player in players">
+  <option value="" ng-hide="">-- choose a player --</option>
+</select>
+
+<div id="playerCards" ng-show="team">
+    <div ng-model="player" ng-repeat="player in players" class="playerCard" 
+      ng-click="alertId(player.playerId)" 
+      ng-mouseover="setHighlightedPlayer(player)" 
+      ng-mouseleave="setHighlightedPlayer({})" 
+      ng-class="{highlight : isHovered(player)}"
+      data-toggle="modal" data-target="#draftPickModal">
+      <img ng-src="{{player.imgUrl}}" height="80" width="60" />
+      <em>{{player.position}} {{player.firstName}} {{player.lastName}}</em>
+    </div>
+</div>
+
+<!--
+
+  http://angular-ui.github.io/bootstrap/#/modal
+
+-->
